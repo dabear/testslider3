@@ -10,9 +10,14 @@ import SlideButton
 
 @main
 struct SliderApp : App {
+    init () {
+        UserDefaults.standard.set(["ar"], forKey: "AppleLanguages")
+    }
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(\.locale, Locale(identifier: "ar"))
+                .environment(\.layoutDirection, .rightToLeft)
         }
     }
 }
